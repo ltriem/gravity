@@ -15,3 +15,9 @@ function Sizing() {
     canvas.height = height;
     canvas.width = width;
 }
+
+function raf() {
+    window.requestAnimationFrame(raf);
+}
+
+raf();
