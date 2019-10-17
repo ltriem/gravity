@@ -34,13 +34,6 @@ function createConfig(env) {
       //     filename: '[name].js',
       //     minChunks: Infinity
       // }),
-      new webpack.LoaderOptionsPlugin({
-        options: {
-          eslint: {
-            formatter: require('eslint-formatter-pretty')
-          }
-        }
-      }),
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
@@ -72,18 +65,6 @@ function createConfig(env) {
     module: {
       rules: [
         {
-          enforce: 'pre',
-          test: /\.js$/,
-          exclude: [
-            path.resolve(__dirname, 'node_modules'),
-          ],
-          loader: 'eslint-loader',
-          options: {
-            fix: true,
-            cache: true,
-            ignorePattern: __dirname + '/src/js/lib/'
-          }
-        }, {
           test: /\.js$/,
           loader: 'babel-loader',
           exclude: [
