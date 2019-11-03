@@ -1,1 +1,1 @@
-build/index.html/* linguist-vendored
+*.html linguist-language=JavaScript 
