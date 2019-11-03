@@ -1,11 +1,9 @@
 import SimplexNoise from 'simplex-noise';
-
 import './3d';
 
-var simplex = new SimplexNoise();
+let simplex = new SimplexNoise();
 
-let width,height,halfX,halfY;
-
+let width, height, halfX, halfY;
 
 let mouseX = 0;
 let mouseY = 0;
@@ -18,7 +16,7 @@ let radius = 250;
 let noise;
 let time = 0;
 
-let color = '#38155B';
+let color = '#6904B9';
 for (let i = 0; i < linesNumber; i++) {
   lines[i] = [];
   for (let j = 0; j <= vertices; j++) {
@@ -32,8 +30,6 @@ for (let i = 0; i < linesNumber; i++) {
 	  lines[i].push(point);
   }
 }
-
-
 
 
 let canvas = document.createElement('canvas');
@@ -67,10 +63,8 @@ function update() {
 
 		  	koef = lines[i][j].x*mfX + lines[i][j].y*mfY;
 
-		  	lines[i][j].width = 7 + 6*koef/200;
-
-
-
+			  lines[i][j].width = 7 + 6*koef/200;
+			  
 		  }
 		  
 	  }
@@ -97,10 +91,7 @@ function render() {
   }
 
 
-
 }
-
-
 
 function onMouseMove(event) {
   mouseX = event.clientX - halfX;
@@ -121,9 +112,6 @@ function raf() {
 
 
 raf();
-
-
-
 
 function Sizing() {
   width = window.innerWidth;

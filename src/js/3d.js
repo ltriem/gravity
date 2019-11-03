@@ -1,8 +1,5 @@
 import * as THREE from 'three';
-var OrbitControls = require('three-orbit-controls')(THREE);
-
-
-
+let OrbitControls = require('three-orbit-controls')(THREE);
 
 let camera, controls, scene, renderer;
 let particles;
@@ -23,9 +20,9 @@ function getCanvas() {
   let ctx = canvas.getContext('2d');
 
   let gradient = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
-  gradient.addColorStop(0.3, 'rgba(255,255,255,0.8)');
-  gradient.addColorStop(0.6, 'rgba(5,30,150,0.6)');
-  gradient.addColorStop(1, 'rgba(5,30,150,0)');
+  gradient.addColorStop(0.3, 'rgba(255,255,255,1)');
+  gradient.addColorStop(0.6, 'rgba(177,16,46,0.8)');
+  gradient.addColorStop(1, 'rgba(177,16,46,0)');
 
   ctx.fillStyle = gradient;
   ctx.fillRect(0,0,32,32);
@@ -41,7 +38,7 @@ function init() {
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerWidth);
 
-  var container = document.getElementById('container');
+  let container = document.getElementById('container');
   container.appendChild(renderer.domElement);
 
   camera = new THREE.PerspectiveCamera(
@@ -84,8 +81,8 @@ function init() {
 
 window.addEventListener('resize', resize); 
 function resize() {
-  var w = window.innerWidth;
-  var h = window.innerHeight;
+  let w = window.innerWidth;
+  let h = window.innerHeight;
   renderer.setSize( w, h );
   camera.aspect = w / h;
 
