@@ -1,13 +1,10 @@
-
 import * as THREE from 'three';
 var OrbitControls = require('three-orbit-controls')(THREE);
 
 
 
 
-let camera, pos, controls, scene, renderer, geometry, geometry1, material,plane,tex1,tex2;
-let destination = {x:0,y:0};
-let textures = [];
+let camera, controls, scene, renderer;
 let particles;
 
 
@@ -102,7 +99,7 @@ let time = 0;
 
 
 
-function onMouseMove(e) {
+function onMouseMove(event) {
   mouseX = event.clientX - halfX;
   mouseY = event.clientY - halfY;
 }
@@ -133,5 +130,9 @@ function render() {
 
 init();
 animate();
+
+
+
+
 
 
