@@ -41,7 +41,7 @@ document.body.appendChild(canvas);
 
 Sizing();
 
-let nfX = 0, nfY = 0;
+let mfX = 0, mfY = 0;
 
 function update() {
 
@@ -49,7 +49,7 @@ function update() {
     nfY += 0.05*(mouseY/halfY - nfY);
     
     for (let i = 0; i < linesNumber; i++) {
-        for (let j = 0; j <=vertices; j++) {
+        for (let j = 0; j <= vertices; j++) {
             let noise = simplex.noise2D(lines[i][j]._x/2 + time * 0.003,lines[i][j]._y/2 + time * 0.003);
 
             lines[i][j].x = lines[i][j]._x * radius * (1 - i/10) + noise * radius/10;
@@ -67,8 +67,11 @@ function update() {
 }
 
 function render() {
+
     ctx.clearRect(0, 0, width, height);
-    ctx.strokeStyle=color;
+    ctx.strokeStyle = color;
+    ctx.lineCap = 'round';
+    ctx.lineCap = 'round';
 
     for (let i = 0; i < linesNumber; i++) {
 

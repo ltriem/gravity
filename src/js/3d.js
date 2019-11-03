@@ -56,6 +56,28 @@ function init() {
 
 
   controls = new OrbitControls(camera, renderer.domElement);
+
+  let material = new THREE.SpriteMaterial({
+    map: new THREE.CanvasTexture(getCanvas())
+  });
+
+
+  particles = new THREE.Group();
+  scene.add(particles);
+
+
+  for (let i = 0; i < 1000; i++) {
+    let particle = new THREE.Sprite(material);
+
+    particle.position.x = (2*Math.random() - 1)*1000;
+    particle.position.y = (2*Math.random() - 1)*1000;
+    particle.position.z = (2*Math.random() - 1)*1000;
+
+    particle.scale.x = particle.scale.y = 5 + 5*Math.random();
+
+    particles.add(particle);
+  }
+
   
 
   resize();
