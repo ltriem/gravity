@@ -65,6 +65,8 @@
     "webpack-cli": "^3.3.0"
   },
   "dependencies": {
-    "simplex-noise": "^2.4.0"
+    "simplex-noise": "^2.4.0",
+    "three": "^0.109.0",
+    "three-orbit-controls": "^82.1.0"
   }
 }
