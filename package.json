@@ -65,7 +65,7 @@
   "dependencies": {
     "gsap": "^2.0.1",
     "simplex-noise": "^2.4.0",
-    "three": "^0.93.0",
+    "three": "^0.125.0",
     "three-orbit-controls": "^82.1.0"
   }
 }
